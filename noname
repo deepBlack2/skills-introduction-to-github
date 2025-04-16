@@ -1,0 +1,58 @@
+Return-Path: <damian.deusenmail@gmail.com>
+Authentication-Results: nv-ccsd-net-1.fortimailcloud.com;
+	spf=pass (fortimailcloud.com: domain of damian.deusenmail@gmail.com designates 209.85.210.47 as permitted sender) smtp.mailfrom=damian.deusenmail@gmail.com;
+	dkim=pass header.i=@gmail.com;
+	dmarc=pass header.from=gmail.com;
+Received: from mail-ot1-f47.google.com (mail-ot1-f47.google.com [209.85.210.47])
+	by nv-ccsd-net-1.fortimailcloud.com  with ESMTPS id 53G1prgO521642-53G1prgP521642
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=OK)
+	for <damian.2843784@nv.ccsd.net>; Tue, 15 Apr 2025 18:51:53 -0700
+Received: by mail-ot1-f47.google.com with SMTP id 46e09a7af769-72c27166ab3so3317183a34.1
+        for <damian.2843784@nv.ccsd.net>; Tue, 15 Apr 2025 18:51:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744768312; x=1745373112; darn=nv.ccsd.net;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=ebMfkmZVzZXysibpzcHHW8PZcH4ahEbCzJQzlsxZFRI=;
+        b=jC7fp7FYTksT6j1M8yScV4OZ6dScrdp7jJ4awKqWSWDNS2+xFt7/MriTYe8Gf/cp96
+         /YCLhr64nMeP7l/t2k6wwf60esJ8MJAATKptAqNjZLHaK2RWpTzWdnaxpI+XqwI4lMyJ
+         X7MpQT9HDFYBuK6qr/f+luQuNN5rJGtF2KSkLE6nEFKLIfxCmxQFRpawydFZQ1X6lCSk
+         DX8kRcR3F/VfMBSeEaT7xx6vmlU/5+ytZ6v1Ci9MmCyA6FxUf0h2nTtyeGV7lM69XTkO
+         ziGYYlR3M2+6MnlJGTnlcrJHTcOYxZXoKeUOC0ttfZO289tF2MtnXVfIn9AET1isNy73
+         VXyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744768312; x=1745373112;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ebMfkmZVzZXysibpzcHHW8PZcH4ahEbCzJQzlsxZFRI=;
+        b=bKj80pNJYabpJ0xfGLeFbvk9N4YnvTLs3UFymJC6bGcVIL0oUXrnFr1WgWoU9GS+jL
+         qGx2EXiMJhqLOfc9w5cF7mtO0s7PbD1q7Uj5JNR4Sa3FD8BztZzHQ5goflV6KjHFq6mR
+         ojPVpX2Ea45MSk46xxQbTrpMK4oG+BXiKf351bytSt9Exz546cpDpOS2HA+WEnEkC+qH
+         6iMBqPk8Isv5EwWjzZPg1+V5lTMzbQ92WxcjaYUi/RTBivrMpjOOGj3d78pthUM3uQMy
+         fkhjwVNO2eooiK06M/0MSmOJ5XmZtne1i7wzG+qbDdC33GMMSBGna8+T/HLRn7dLYgKu
+         8r0A==
+X-Gm-Message-State: AOJu0YwVCVdYeNQIImxWNWqi8Ry86yI75TtFWA290bKxGJqagRtXxLUY
+	vo2WQ7RUMoMfsmulbLIx9jeTLRVVBhZ8mjICIm5tpCVW+X0LRUEpPcwwxo1wA4/7PdaxAkuC+9L
+	FBiC6o0jlnJ61lGvMTMDqKAENxmEaGA==
+X-Gm-Gg: ASbGncsvwRhD2wSIKJ1YptrZVuKIGx7egcycTw/mZCQ8uBqvajhT6IRxcadds+4KC8+
+	B030vPDAirJUTvyDxJulkwkpDVZqOdxBe6rJUmF/jgFkMF9xjG+T599oOs9USw4PfCQKxpG2x9F
+	x0w0MeS1qVhxwJYVUhqPAL0kDWtj0EYnvi8m8fNOGWUmgsYPfyjSJMQeU=
+X-Google-Smtp-Source: AGHT+IEPbC3xKOWCS7cDUbZPxWTlmHWD8O8CtmRaGwZYomxl4ToIEstr7jaKn40Ibt/WvCJBRiHbZ9a+hz2yY/sxpQs=
+X-Received: by 2002:a05:6808:158c:b0:3fa:ca26:6291 with SMTP id
+ 5614622812f47-400b022f986mr39316b6e.28.1744768312198; Tue, 15 Apr 2025
+ 18:51:52 -0700 (PDT)
+MIME-Version: 1.0
+From: Damian Deusenberry <damian.deusenmail@gmail.com>
+Date: Tue, 15 Apr 2025 18:51:40 -0700
+X-Gm-Features: ATxdqUHSIn_lxDQFreljuV5SMeccJxWUXO0KVhimv__UymOgl_Aljh1H_Tbj7IM
+Message-ID: <CADVvCR169YAgnPd2Zx943p8G+K08d9rmP7WyQbfyQ4z7bYG4Fg@mail.gmail.com>
+Subject: 
+To: "damian.2843784@nv.ccsd.net" <damian.2843784@nv.ccsd.net>
+Content-Type: multipart/mixed; boundary="00000000000076eb590632db8710"
+X-FE-Attachment-Name: Pokemon - FireRed Essence v1.5.ips
+X-FEAS-BEC-Info: WlpIGw0aAQkEARIJHAEHBlJSCRoLAAEeDUhZUEhYSFhIWUhZXkguLT4lKyQlWFhYWlteXF5aSFpfSAwJBQEJBkYMDR0bDQYFCQEEKA8FCQEERgsHBUhYSFpeSAwJBQEJBkZaUFxbX1BcKAYeRgsLGwxGBg0cSFlIWUhZW0haWFFGUF1GWllYRlxfSF5IWEhYSFlIWEhYSFhIWl5IDAkFAQkGRlpQXFtfUFwoBh5GCwsbDEYGDRxIWQ==
+X-FEAS-DKIM: Valid
+X-FEAS-Client-IP: 209.85.210.47
+X-FE-Last-Public-Client-IP: 209.85.210.47
+X-FE-Envelope-From: damian.deusenmail@gmail.com
+X-FE-Policy-ID: 7:24:1:SYSTEM
